@@ -11,20 +11,10 @@ import {
 import useStyles from "./styles";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
-function List() {
+function List({ places }) {
   const classes = useStyles();
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
-  const places = [
-    { name: "foo" },
-    { name: "foo" },
-    { name: "foo" },
-    { name: "foo" },
-    { name: "foo" },
-    { name: "foo" },
-    { name: "foo" },
-    { name: "foo" },
-  ];
 
   return (
     <div className={classes.container}>
@@ -47,6 +37,7 @@ function List() {
           <MenuItem value="4.5">Above 4.5</MenuItem>
         </Select>
       </FormControl>
+
       <Grid container spacing={3} className={classes.list}>
         {places?.map((place, i) => (
           <Grid key={i} item xs={12}>

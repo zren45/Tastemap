@@ -5,9 +5,8 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import Rating from "@material-ui/lab";
 import useStyles from "./styles";
 
-function Map() {
+const Map = ({ setCoordinates, setBounds, coordinates }) => {
   const classes = useStyles();
-  const coordinates = { lat: 43.047902, lng: -89.337126 };
 
   return (
     <div className={classes.mapContainer}>
@@ -18,12 +17,16 @@ function Map() {
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
         options={""}
-        onChange={""}
+        onChange={(e) => {
+          setCoordinates({ lat: e.center.lat, lng: e.center.lng });
+          setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
+          console.log(e);
+        }}
         onChildClik={""}
       ></GoogleMapReact>
       <LocationOnOutlinedIcon></LocationOnOutlinedIcon>
     </div>
   );
-}
+};
 
 export default Map;
