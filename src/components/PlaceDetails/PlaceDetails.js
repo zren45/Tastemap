@@ -19,6 +19,7 @@ function PlaceDetails({ place }) {
   return (
     <div>
       <Card>
+        {/* photo */}
         <CardMedia
           style={{ height: 350 }}
           image={
@@ -28,16 +29,20 @@ function PlaceDetails({ place }) {
           }
           title={place.name}
         />
+
+        {/* content */}
         <CardContent>
           <Typography gutterBottom variant="h5">
             {place.name}
           </Typography>
+
           <Box display="flex" justifyContent={"space-between"}>
             <Typography variant="subtitle1">{place.price_level}</Typography>
             <Typography gutterBottom variant="subtitle1">
               {place.ranking}
             </Typography>
           </Box>
+
           {place?.awards?.map((award) => (
             <Box display="flex" justifyContent="space-between" my={1}>
               <img src={award.images.small} />
@@ -46,6 +51,7 @@ function PlaceDetails({ place }) {
               </Typography>
             </Box>
           ))}
+          {/* category chip */}
           {place?.cuisine?.map(({ name }) => (
             <Chip
               key={name}
@@ -54,6 +60,7 @@ function PlaceDetails({ place }) {
               className={classes.chip}
             />
           ))}
+
           {place.address && (
             <Typography
               gutterBottom
@@ -62,9 +69,10 @@ function PlaceDetails({ place }) {
               className={classes.subtitle}
             >
               <LocationOnIcon />
-              {place.address}
+              {`${place.address_obj.street1} ${place.address_obj.street2}, ${place.address_obj.city}, ${place.address_obj.state}`}
             </Typography>
           )}
+
           {place.phone && (
             <Typography
               variant="body2"
@@ -75,6 +83,23 @@ function PlaceDetails({ place }) {
             </Typography>
           )}
         </CardContent>
+        {/* Link */}
+        <CardActions>
+          <Button
+            size="small"
+            color="secondary"
+            onClick={() => window.open(place.web_url, "_blank")}
+          >
+            Trip Advisor
+          </Button>
+          <Button
+            size="small"
+            color="primary"
+            onClick={() => window.open(place.website, "_blank")}
+          >
+            Website
+          </Button>
+        </CardActions>
       </Card>
     </div>
   );
