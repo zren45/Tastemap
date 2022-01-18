@@ -39,14 +39,24 @@ const App = () => {
           <List places={places}></List>
         </Grid>
         <Grid item xs={12} md={8}>
+          <Button
+            variant="contained"
+            color="info"
+            onClick={handleClick}
+            style={{
+              position: "relative",
+              top: "80px",
+              right: "-45%",
+              zIndex: "9999",
+            }}
+          >
+            Search this Area
+          </Button>
           <Map
             setCoordinates={setCoordinates}
             setBounds={setBounds}
             coordinates={coordinates}
           ></Map>
-          <Button variant="contained" color="primary" onClick={handleClick}>
-            Search this Area
-          </Button>
         </Grid>
       </Grid>
     </div>
