@@ -12,7 +12,6 @@ const Map = ({ setCoordinates, setBounds, coordinates, children }) => {
     <div className={classes.mapContainer}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "" }}
-        defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
@@ -22,7 +21,6 @@ const Map = ({ setCoordinates, setBounds, coordinates, children }) => {
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
         }}
         onChildClik={""}
-        yesIWantToUseGoogleMapApiInternals
       ></GoogleMapReact>
       <LocationOnOutlinedIcon></LocationOnOutlinedIcon>
     </div>

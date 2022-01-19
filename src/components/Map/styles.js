@@ -11,6 +11,9 @@ export default makeStyles(() => ({
   mapContainer: {
     height: "85vh",
     width: "100%",
+
+    overflow: "hidden",
+    borderRadius: "10px",
   },
   markerContainer: {
     position: "absolute",
