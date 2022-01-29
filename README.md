@@ -1,5 +1,16 @@
 # Tastemap  (In progress)
-Live Link : https://tastemap.zhixiangren.com
+I'm definitely a foodie.
+
+When I travel, I usually plan my trip to special local restaurants by watching videos of food tour youtubers. 
+
+But watch hours of youtube videos to find a good restaurants is a time consumuing task
+
+So I'm making this web app to show restaurants that my favorite food youtubers has been to. 
+
+
+
+## Live Link : 
+https://tastemap.zhixiangren.com
 
 ## Features 📋
 ### Finished
